@@ -16,8 +16,10 @@ class AuthsController < ApplicationController
       session[:author_id] = @author.id
       redirect_to  @author
     else
-      flash[:alert] = "Invalid Name"
-      redirect_to new_auth_path
+      respond_to do |format|
+        format.html { redirect_to new_auth_path, notice: 'Invalid Name' }
+        format.json { head :no_content }
+      end
     end
   end
 

@@ -10,6 +10,10 @@ class AuthorsController < ApplicationController
   # GET /authors/1
   # GET /authors/1.json
   def show
+      if current_author!=set_author
+        flash[:notice] = 'You are not allowed to view other Authors profile.' 
+        redirect_to current_author
+      end
   end
 
   # GET /authors/new
@@ -36,7 +40,11 @@ class AuthorsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_author
-      @author = Author.find(params[:id])
+      begin
+        @author = Author.find(params[:id])
+      rescue ActiveRecord::RecordNotFound => e
+        @author=nil
+      end
     end
 
     # Only allow a list of trusted parameters through.

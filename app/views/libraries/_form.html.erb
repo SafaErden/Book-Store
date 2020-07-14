@@ -1,0 +1,8 @@
+
+<%= form_with(model: library, local: true) do |form| %>
+  <div class="actions">
+  <%= label_tag(:name, "Category Name:") %>
+  <%= form.text_field :name %>
+  <%= submit_tag("Create") %>
+  </div>
+<% end %>
