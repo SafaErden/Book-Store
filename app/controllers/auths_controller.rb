@@ -1,7 +1,5 @@
 class AuthsController < ApplicationController
-  before_action :set_auth, only: [:destroy]
-
-
+ 
   # GET /auths/new
   def new
     if logged_in?
@@ -26,18 +24,14 @@ class AuthsController < ApplicationController
   # DELETE /auths/1
   # DELETE /auths/1.json
   def destroy
-    session[:author_id]
+    session[:author_id]=nil
     respond_to do |format|
-      format.html { redirect_to auths_url, notice: 'Auth was successfully destroyed.' }
+      format.html { redirect_to new_auth_path, notice: 'Auth was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_auth
-      @auth = Auth.find(params[:id])
-    end
 
     # Only allow a list of trusted parameters through.
     def auth_params
