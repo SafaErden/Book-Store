@@ -1,6 +1,6 @@
 <div class="shadow-lg sign_form bg-custom border-custom-2 rounded text-center p-2 py-5">
-    <div class="shadow-lg d-flex align-items-center justify-content-center custom-circle bg-light text-custom font-weight-bold text-center mb-3 p-5">
-        <span class="h2">Gravatar here</span>
+    <div class="shadow-lg d-flex align-items-center justify-content-center custom-circle bg-light text-custom font-weight-bold text-center mb-3">
+       <%= gravatar_image_tag(current_author.name, alt: current_author.name, class:"img-responsive w-100 h-100 custom-circle")%>
     </div>
     <div class="text-light mb-5 h4">
       <%= current_author.name.upcase %>
