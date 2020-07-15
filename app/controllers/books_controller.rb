@@ -4,11 +4,11 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
-    @books = Book.all
+    @books = current_author.books
   end  
   
   def store
-    @books = Book.all
+    @books = Book.all.select{|book| book.author != current_author}
   end
 
   # GET /books/1

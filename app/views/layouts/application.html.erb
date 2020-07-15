@@ -9,7 +9,13 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="body">
+    <div class="container container-100vh">
+      <div class="row">
+        <div class="col d-flex justify-content-center align-items-center flex-column">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
