@@ -27,7 +27,7 @@
   justify-content: center;
  }
 
- .text-primary{
+ .text-custom{
    color: rgb(31, 83, 136);
  }
 
@@ -35,11 +35,15 @@
   border:1px solid white;
  }
 
+ .border-custom-2{
+  border:3px solid white;
+ }
+
  .bg-success{
    background-color: rgb(96, 182, 37);
  }
 
- .bg-primary{
+ .bg-custom{
    background-color: rgb(31, 83, 136);
  }
 
@@ -54,4 +58,22 @@
    height: 200px;
    border-radius: 200px;
    margin:auto;
+ }
+
+ .svg_holder{
+  border:1px solid white;
+  border-radius: 50px;
+  width: 45px;
+  height: 45px;
+  padding:7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ }
+
+ .link_holder{
+   border-bottom: 1px solid white;
+   width:100%;
+   display: flex;
+   align-items: center;
  }

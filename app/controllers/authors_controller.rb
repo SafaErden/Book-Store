@@ -1,17 +1,11 @@
 class AuthorsController < ApplicationController
-  before_action :set_author, only: [:show, :edit, :update, :destroy]
-
-  # GET /authors
-  # GET /authors.json
-  def index
-    @authors = Author.all
-  end
+  before_action :set_author, only: [:show]
 
   # GET /authors/1
   # GET /authors/1.json
   def show
       if current_author!=set_author
-        flash[:notice] = 'You are not allowed to view other Authors profile.' 
+        flash[:notice] = 'You are not allowed to view other authors\' profile.' 
         redirect_to current_author
       end
   end
