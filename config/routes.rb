@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :books, only: [:new, :create, :index]
   resources :libraries, only: [:new, :create, :index, :show, :edit, :update, :destroy]
   root :to => "auths#new" #, :id => '1'
+  get 'store', :to => 'books#store'
 end

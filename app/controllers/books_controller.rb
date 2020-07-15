@@ -5,6 +5,10 @@ class BooksController < ApplicationController
   # GET /books.json
   def index
     @books = Book.all
+  end  
+  
+  def store
+    @books = Book.all
   end
 
   # GET /books/1
