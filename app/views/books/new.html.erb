@@ -1,5 +1,3 @@
-<h1>New Book</h1>
-
+<% @title="New Book" %>
+<%= render 'layouts/navbar' %>
 <%= render 'form', book: @book %>
-
-<%= link_to 'Back', books_path %>

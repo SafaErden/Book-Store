@@ -1,5 +1,14 @@
-<h1>New Library Category</h1>
-
-<%= render 'form', library: @library %>
-
-<%= link_to 'Back', libraries_path %>
+<% @title="New Category" %>
+<%= render 'layouts/navbar' %>
+<div class="shadow-lg sign_form bg-light rounded  p-2 py-5">
+  
+  <%= form_with(model: @library, local: true) do |form| %>
+    <div class="actions">
+      <%= form.text_field :name, placeholder: "Category Name", class: "w-100 p-2" %><br>
+      <p class="notice"><%= notice %></p>
+      <div class="w-100 p-2 bg-success-custom my-5">
+        <%= submit_tag("CREATE", :class=>"w-100 bg-success-custom text-white border-custom p-2") %><br>
+      </div>
+    </div>
+  <% end %>
+</div>

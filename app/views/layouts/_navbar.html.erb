@@ -6,7 +6,7 @@
       <path fill-rule="evenodd" d="M11.5 8a.5.5 0 0 0-.5-.5H6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 .5-.5z"/>
     </svg>
   <% end %>
-  <div class="h3 text-light p-0 m-0 mx-5"> <%= @title %> </div>
+  <div class="h3 text-light p-0 m-0 mx-5"> <%= @title.truncate(23) %> </div>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
