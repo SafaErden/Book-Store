@@ -1,0 +1,25 @@
+<%= form_with(model: book, local: true) do |form| %>
+  <% if book.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+
+      <ul>
+      <% book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form_with(model: book, local: true) do |form| %>
+    <div class="actions">
+    <%= label_tag(:name, "Book Name:") %>
+    <%= form.text_field :name %>
+    <%= label_tag(:amount, "Book Price:") %>
+    <%= form.number_field :amount %>
+    <%= label_tag(:library_id, "Category:") %>
+    <%= form.number_field :library_id %>
+    <%= submit_tag("Create") %>
+    </div>
+  <% end %>
+<% end %>

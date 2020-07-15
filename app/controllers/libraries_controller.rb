@@ -4,12 +4,19 @@ class LibrariesController < ApplicationController
   # GET /libraries
   # GET /libraries.json
   def index
-    @libraries = Library.all
+    @libraries = current_author.libraries
   end
 
   # GET /libraries/1
   # GET /libraries/1.json
   def show
+   if current_author.libraries.include?set_library
+    @libray=set_library
+    @books=set_library.books
+   else
+    flash[:notice] = 'You are not allowed to view other authors libraries.' 
+    redirect_to libraries_url
+   end
   end
 
   # GET /libraries/new
@@ -64,7 +71,12 @@ class LibrariesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_library
-      @library = Library.find(params[:id])
+      begin
+        @library = Library.find(params[:id])
+      rescue ActiveRecord::RecordNotFound => e
+        @library=nil
+      end
+      
     end
 
     # Only allow a list of trusted parameters through.
