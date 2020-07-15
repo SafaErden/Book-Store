@@ -31,7 +31,7 @@ class AuthorsController < ApplicationController
         format.html { redirect_to new_auth_path, notice: 'Author account was successfully created.' }
         format.json { render :show, status: :created, location: @author }
       else
-        format.html { render :new }
+        format.html { redirect_to new_author_path, notice: 'Please type a valid input paremeter, it should contain at least 2 characters and it should be unique.'  }
         format.json { render json: @author.errors, status: :unprocessable_entity }
       end
     end

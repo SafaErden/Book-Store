@@ -17,7 +17,7 @@ class AuthsController < ApplicationController
       redirect_to  @author
     else
       respond_to do |format|
-        format.html { redirect_to new_auth_path, notice: 'Invalid Name' }
+        format.html { redirect_to new_auth_path, notice: 'Sorry, we have no user with this input. Please sign up, if you don\'t have an account.' }
         format.json { head :no_content }
       end
     end
@@ -28,7 +28,7 @@ class AuthsController < ApplicationController
   def destroy
     session[:author_id]=nil
     respond_to do |format|
-      format.html { redirect_to new_auth_path, notice: 'Auth was successfully destroyed.' }
+      format.html { redirect_to new_auth_path, notice: 'Successfully logged out.' }
       format.json { head :no_content }
     end
   end
