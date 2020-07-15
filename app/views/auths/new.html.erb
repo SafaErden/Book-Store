@@ -1,5 +1,15 @@
-<h1>Sign In</h1>
-<p id="notice"><%= notice %></p>
-<%= render 'form', auth: @auth %>
-
-<%= link_to 'Sign up', new_author_path %>
+<div class="sign_form bg-light rounded  p-2 py-5">
+  <h1 class="text-primary font-weight-bold text-center mb-5">Sign In</h1>
+  <%= form_with(model: @auth, local: true, url: "/auths") do |form| %>
+    <div class="actions">
+      <%= form.text_field :name, placeholder: "Author name or email", class: "w-100 p-2" %><br>
+      <p class="notice"><%= notice %></p>
+      <div class="w-100 p-2 bg-success my-5">
+        <%= submit_tag("SIGN IN", :class=>"w-100 bg-success text-white border-custom p-2") %><br>
+      </div>
+    </div>
+  <% end %>
+  <span>If you don't have an accout, then
+    <%= link_to 'Sign up', new_author_path %>
+  <span>
+</div>
