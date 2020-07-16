@@ -18,14 +18,20 @@ class AuthorsController < ApplicationController
   # POST /authors
   # POST /authors.json
   def create
+    if Author.exists?(name: author_params[:name])
+      flash[:alert] =  "This name is taken, please type another one."
+      redirect_to new_author_path
+      return
+    end
     @author = Author.new(author_params)
 
     respond_to do |format|
       if @author.save
+        session[:author_id] = @author.id
         format.html { redirect_to new_auth_path, notice: 'Author account was successfully created.' }
         format.json { render :show, status: :created, location: @author }
       else
-        format.html { redirect_to new_author_path, notice: 'Please type a valid input paremeter, it should contain at least 2 characters and it should be unique.'  }
+        format.html { redirect_to new_author_path, alert: 'Please type a valid input paremeter, it should contain at least 2 characters and it should be unique.'  }
         format.json { render json: @author.errors, status: :unprocessable_entity }
       end
     end

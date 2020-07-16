@@ -10,14 +10,20 @@ class AuthsController < ApplicationController
   # POST /auths
   # POST /auths.json
   def create
+    
+    if params[:name].size < 2
+      flash[:alert] =  "Please type a valid name, it should contain at least 2 characters."
+      redirect_to new_auth_path
+      return
+    end
     @author = Author.find_by(name: params[:name])
-    new_auth_path
+   
     if @author
       session[:author_id] = @author.id
       redirect_to  @author
     else
       respond_to do |format|
-        format.html { redirect_to new_auth_path, notice: 'Sorry, we have no user with this input. Please sign up, if you don\'t have an account.' }
+        format.html { redirect_to new_auth_path, alert: 'Sorry, we have no author with this input. Please sign up, if you don\'t have an account.' }
         format.json { head :no_content }
       end
     end

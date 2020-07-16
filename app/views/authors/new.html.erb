@@ -4,8 +4,9 @@
   </div>
   <%= form_with(model: @author, local: true) do |form| %>
     <div class="actions">
-      <%= form.text_field :name, placeholder: "Author name or email", class: "w-100 p-2" %><br>
+      <%= form.text_field :name, placeholder: "Author name", class: "w-100 p-2" %><br>
       <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
       <div class="w-100 p-2 bg-success-custom my-5">
         <%= submit_tag("SIGN UP", :class=>"w-100 bg-success-custom text-white border-custom p-2") %><br>
       </div>
