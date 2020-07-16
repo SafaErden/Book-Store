@@ -31,7 +31,7 @@ class LibrariesController < ApplicationController
     @library = current_author.libraries.build(library_params)
     respond_to do |format|
       if @library.save
-        format.html { redirect_to @library, notice: 'Library was successfully created.' }
+        format.html { redirect_to @library, notice: 'Category was successfully created.' }
         format.json { render :show, status: :created, location: @library }
       else
         format.html { render :new }

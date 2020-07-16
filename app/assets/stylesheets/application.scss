@@ -52,7 +52,13 @@
  }
 
  .notice{
-   color:red;
+   color:rgb(12, 182, 6);
+   font-style: italic;
+   font-size: small;
+ }
+
+ .alert{
+   color:rgb(224, 14, 14);
    font-style: italic;
    font-size: small;
  }

@@ -4,8 +4,11 @@
     <div class="actions">
       <%= form.text_field :name, placeholder: "Name", class: "w-100 p-2 my-2" %><br>
       <%= form.number_field :amount, placeholder: "Price", class: "w-100 p-2 my-2" %><br>
-      <%= form.number_field :library_id, placeholder: "Category", class: "w-100 p-2 my-2" %><br>
+      
+      <%= form.label :library_id, @message , class: "w-100 m-0 mt-2 p-0" %>
+      <%= form.select :library_id, options_from_collection_for_select(@libraries, :id, :name), {}, {:class => 'w-100 p-2 my-2'} %>
       <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
       <div class="w-100 p-2 bg-success-custom my-5">
         <%= submit_tag("Publish", :class=>"w-100 bg-success-custom text-white border-custom p-2") %>
       </div>

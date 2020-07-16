@@ -3,7 +3,7 @@
   <% @libraries.each do |library| %>
     <div class="my-2 bg-white p-3 d-flex justify-content-between">
       <div>
-        <p class="text-secondary h6 m-0 p-0 pt-2"><strong>Book Name: </strong><%= library.name %></p>
+        <p class="text-secondary h6 m-0 p-0 pt-2"><strong>Category Name: </strong><%= library.name %></p>
         <p class="text-secondary h6 m-0 p-0 pt-3"><strong>Published: </strong> <%= library.created_at.day %>-<%= library.created_at.month %>-<%= library.created_at.year %></p>
       </div>
     </div>
