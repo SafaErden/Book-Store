@@ -1,10 +1,10 @@
 class LibrariesController < ApplicationController
   before_action :set_library, only: [:show, :edit, :update, :destroy]
-
+  before_action :check_auth
   # GET /libraries
   # GET /libraries.json
   def index
-    @libraries = current_author.libraries
+    @libraries = current_author.libraries.order("name ASC")
   end
 
   # GET /libraries/1
@@ -13,6 +13,7 @@ class LibrariesController < ApplicationController
    if current_author.libraries.include?set_library
     @libray=set_library
     @books=set_library.books
+    @book_author=true
    else
     flash[:notice] = 'You are not allowed to view other authors libraries.' 
     redirect_to libraries_url

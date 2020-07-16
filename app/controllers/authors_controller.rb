@@ -1,12 +1,12 @@
 class AuthorsController < ApplicationController
+  before_action :check_auth, only: [:show]
   before_action :set_author, only: [:show]
-
   # GET /authors/1
   # GET /authors/1.json
   def show
       if current_author!=set_author
         flash[:notice] = 'You are not allowed to view other authors\' profile.' 
-        redirect_to current_author
+        redirect_to new_auth_path
       end
   end
 

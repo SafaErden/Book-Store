@@ -9,4 +9,11 @@ class ApplicationController < ActionController::Base
     def logged_in?
         !current_author.nil?
     end
+
+    def check_auth
+      unless logged_in?
+        flash[:alert] = 'Please sign in to access this page.' 
+        redirect_to new_auth_path
+      end
+    end
 end

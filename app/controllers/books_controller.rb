@@ -1,14 +1,17 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
+  before_action :check_auth
 
   # GET /books
   # GET /books.json
   def index
-    @books = current_author.books
+    @books = current_author.books.order("created_at DESC")
+    @image=true
   end  
   
   def store
-    @books = Book.all.select{|book| book.author != current_author}
+    @books = Book.all.order("created_at DESC").select{|book| book.author != current_author}
+    @image=false
   end
 
 

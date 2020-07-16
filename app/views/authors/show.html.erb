@@ -3,7 +3,7 @@
        <%= gravatar_image_tag(current_author.name, alt: current_author.name, class:"img-responsive w-100 h-100 custom-circle")%>
     </div>
     <div class="text-light mb-5 h4">
-      <%= current_author.name.upcase %>
+      <%= current_author.name.downcase.capitalize %>
     </div>
     <p class="notice text-white"><%= notice %></p>
     
