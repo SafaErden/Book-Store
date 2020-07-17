@@ -1,4 +1,4 @@
-<div class="shadow-lg sign_form bg-custom border-custom-2 rounded text-center p-2 py-5">
+<div class="sign_form bg-custom rounded text-center p-2 py-5">
     <div class="shadow-lg d-flex align-items-center justify-content-center custom-circle bg-light text-custom font-weight-bold text-center mb-3">
        <%= gravatar_image_tag(current_author.name, alt: current_author.name, class:"img-responsive w-100 h-100 custom-circle")%>
     </div>
@@ -46,11 +46,11 @@
     
     <div class="text-light mb-3 h4 text-left p-0 px-3 d-flex">
       <div class="svg_holder mr-3 h1">
-      <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-door-open" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd" d="M1 15.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM11.5 2H11V1h.5A1.5 1.5 0 0 1 13 2.5V15h-1V2.5a.5.5 0 0 0-.5-.5z"/>
-        <path fill-rule="evenodd" d="M10.828.122A.5.5 0 0 1 11 .5V15h-1V1.077l-6 .857V15H3V1.5a.5.5 0 0 1 .43-.495l7-1a.5.5 0 0 1 .398.117z"/>
-        <path d="M8 9c0 .552.224 1 .5 1s.5-.448.5-1-.224-1-.5-1-.5.448-.5 1z"/>
-      </svg>
+        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-door-open" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M1 15.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM11.5 2H11V1h.5A1.5 1.5 0 0 1 13 2.5V15h-1V2.5a.5.5 0 0 0-.5-.5z"/>
+          <path fill-rule="evenodd" d="M10.828.122A.5.5 0 0 1 11 .5V15h-1V1.077l-6 .857V15H3V1.5a.5.5 0 0 1 .43-.495l7-1a.5.5 0 0 1 .398.117z"/>
+          <path d="M8 9c0 .552.224 1 .5 1s.5-.448.5-1-.224-1-.5-1-.5.448-.5 1z"/>
+        </svg>
       </div>
       <div class="link_holder">
       <%= link_to 'Log Out', auth_path, data: {:confirm => 'Are you sure?'}, :method => :delete, class: "text-light h5" %><br>

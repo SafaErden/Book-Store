@@ -36,7 +36,8 @@
  }
 
  .border-custom-2{
-  border:3px solid white;
+  border:0px solid white;
+  box-shadow:20px 20px 50px 15px black; 
  }
 
  .bg-success-custom{
@@ -44,7 +45,8 @@
  }
 
  .bg-custom{
-   background-color: rgb(31, 83, 136);
+  background: rgb(2,0,36);
+  background: linear-gradient(rgb(11, 8, 65) 0%, rgba(31,83,136,1) 65%);
  }
 
  .bg-nav{
