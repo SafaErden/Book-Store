@@ -1,1 +1,1 @@
-json.partial! "libraries/library", library: @library
+json.partial! 'libraries/library', library: @library

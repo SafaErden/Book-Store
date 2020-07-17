@@ -1,1 +1,1 @@
-json.array! @libraries, partial: "libraries/library", as: :library
+json.array! @libraries, partial: 'libraries/library', as: :library

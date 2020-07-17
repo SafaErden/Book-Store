@@ -12,90 +12,89 @@
  *
  */
 
- @import "bootstrap";
+@import "bootstrap";
 
- .body{
+.body {
   background-color: rgb(31, 83, 136);
   font-family: "Arial", Times, serif;
   min-height: 100vh;
- }
+}
 
- .container-100vh{
-  display:flex;
+.container-100vh {
+  display: flex;
   min-height: 100vh;
   align-items: center;
   justify-content: center;
- }
+}
 
- .text-custom{
-   color: rgb(31, 83, 136);
- }
+.text-custom {
+  color: rgb(31, 83, 136);
+}
 
- .border-custom{
-  border:1px solid white;
- }
+.border-custom {
+  border: 1px solid white;
+}
 
- .border-custom-2{
-  border:0px solid white;
-  box-shadow:20px 20px 50px 15px black; 
- }
+.border-custom-2 {
+  border: 0 solid white;
+  box-shadow: 20px 20px 50px 15px black;
+}
 
- .bg-success-custom{
-   background-color: rgb(96, 182, 37);
- }
+.bg-success-custom {
+  background-color: rgb(96, 182, 37);
+}
 
- .bg-custom{
-  background: rgb(2,0,36);
-  background: linear-gradient(rgb(11, 8, 65) 0%, rgba(31,83,136,1) 65%);
- }
+.bg-custom {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(rgb(11, 8, 65) 0%, rgba(31, 83, 136, 1) 65%);
+}
 
- .bg-nav{
-   background-color: rgb(51, 111, 178);
- }
+.bg-nav {
+  background-color: rgb(51, 111, 178);
+}
 
- .notice{
-   color:rgb(12, 182, 6);
-   font-style: italic;
-   font-size: small;
- }
+.notice {
+  color: rgb(12, 182, 6);
+  font-style: italic;
+  font-size: small;
+}
 
- .alert{
-   color:rgb(224, 14, 14);
-   font-style: italic;
-   font-size: small;
- }
+.alert {
+  color: rgb(224, 14, 14);
+  font-style: italic;
+  font-size: small;
+}
 
- .custom-circle{
-   width:200px;
-   height: 200px;
-   border-radius: 200px;
-   margin:auto;
- }
+.custom-circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 200px;
+  margin: auto;
+}
 
- .svg_holder{
-  border:1px solid white;
+.svg_holder {
+  border: 1px solid white;
   border-radius: 50px;
   width: 45px;
   height: 45px;
-  padding:7px;
+  padding: 7px;
   display: flex;
   align-items: center;
   justify-content: center;
- }
+}
 
- .link_holder{
-   border-bottom: 1px solid white;
-   width:100%;
-   display: flex;
-   align-items: center;
- }
+.link_holder {
+  border-bottom: 1px solid white;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
 
-.bg-light-gray{
+.bg-light-gray {
   background-color: #f1f2f3;
 }
 
 .iconic {
-  width:64px;
-  height:64px;
-
+  width: 64px;
+  height: 64px;
 }

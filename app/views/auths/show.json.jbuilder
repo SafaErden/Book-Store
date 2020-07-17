@@ -1,1 +1,1 @@
-json.partial! "auths/auth", auth: @auth
+json.partial! 'auths/auth', auth: @auth
