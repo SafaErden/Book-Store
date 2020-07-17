@@ -28,7 +28,7 @@ class BooksController < ApplicationController
     @book = current_author.books.build(book_params)
     @library = Library.find_by(id: library_params[:library_id])
 
-    if book_params[:name].nil? || book_params[:name].size < 3
+    if book_params[:name].nil? || book_params[:name].size < 2
       flash[:alert] = 'Please type a valid book name that contains at least 2 characters..'
       redirect_to new_book_path
       return
