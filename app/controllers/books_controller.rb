@@ -1,5 +1,6 @@
 # rubocop:disable Metrics/MethodLength
 # rubocop:disable Metrics/PerceivedComplexity
+# rubocop:disable Metrics/CyclomaticComplexity
 class BooksController < ApplicationController
   before_action :set_book, only: %i[show edit update destroy]
   before_action :check_auth
@@ -74,3 +75,4 @@ class BooksController < ApplicationController
 end
 # rubocop:enable Metrics/MethodLength
 # rubocop:enable Metrics/PerceivedComplexity
+# rubocop:enable Metrics/CyclomaticComplexity
