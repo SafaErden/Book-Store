@@ -4,6 +4,15 @@
   min-height: 100vh;
 }
 
+.row {
+  min-height: 100vh;
+}
+
+.col-12 {
+  min-height: 100vh;
+  background-color: #f1f2f3;
+}
+
 .container-100vh {
   display: flex;
   min-height: 100vh;
