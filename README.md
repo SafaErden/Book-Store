@@ -2,6 +2,17 @@
 
 > This is the capstone project of the Microverse Ruby on Rails curriculum. This capstone project is completed as part of the Microverse remote software developement curriculum using the pair programming approach.
 
+-In this project I created a book store where individual users can create an author account with a uniq name. After account creation users can publish their own books, and create libraries to store their published books.
+
+-For library categories, users can upload images for better UI and UX.
+
+-Users can also view the books that are created by other authors by visiting the store.
+
+-Users can track the price of the books.
+
+-This project is built with the MVP approach.
+
+
 ## Check Video Link
 
 [Description Video](https://www.loom.com/share/ef3f7a167bf443b396eba32408f12a3b)
