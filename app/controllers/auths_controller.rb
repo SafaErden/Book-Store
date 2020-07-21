@@ -4,11 +4,6 @@ class AuthsController < ApplicationController
   end
 
   def create
-    if params[:name].size < 2
-      flash[:alert] = 'Please type a valid name, it should contain at least 2 characters.'
-      redirect_to new_auth_path
-      return
-    end
     @author = Author.find_by(name: params[:name])
 
     if @author
