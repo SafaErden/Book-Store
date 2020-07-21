@@ -1,3 +1,4 @@
+# rubocop:disable Lint/UselessAssignment
 require 'rails_helper'
 
 RSpec.describe Book, type: :model do
@@ -20,3 +21,4 @@ RSpec.describe Book, type: :model do
     it { should have_many(:libraries).through(:book_libraries) }
   end
 end
+# rubocop:enable Lint/UselessAssignment
