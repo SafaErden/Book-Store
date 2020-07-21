@@ -8,7 +8,7 @@ class BooksController < ApplicationController
   end
 
   def store
-    @books = Book.all.desc.reject { |book| book.author == current_author }
+    @books = Book.all.desc.includes(:author).where("author_id!=?", current_author.id)
     @image = false
   end
 
