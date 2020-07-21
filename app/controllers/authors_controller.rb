@@ -15,11 +15,6 @@ class AuthorsController < ApplicationController
   end
 
   def create
-    if Author.exists?(name: author_params[:name])
-      flash[:alert] = 'This name is taken, please type another one.'
-      redirect_to new_author_path
-      return
-    end
     @author = Author.new(author_params)
 
     respond_to do |format|
@@ -27,8 +22,7 @@ class AuthorsController < ApplicationController
         session[:author_id] = @author.id
         format.html { redirect_to new_auth_path, notice: 'Author account was successfully created.' }
       else
-        alert_text = 'Type a valid input paremeter, it should contain at least 2 characters and it should be unique.'
-        format.html { redirect_to new_author_path, alert: alert_text }
+        format.html { redirect_to new_author_path, alert: @author.errors.full_messages.first }
       end
     end
   end

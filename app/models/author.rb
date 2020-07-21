@@ -4,4 +4,11 @@ class Author < ApplicationRecord
 
   has_many :libraries, foreign_key: :author_id
   has_many :books, foreign_key: :author_id
+
+  validates :name, uniqueness: true
+  validate :name_length
+
+  def name_length
+    errors.add(:name, 'should contain at least two characters') if name.size < 2
+  end
 end

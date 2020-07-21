@@ -1,4 +1,3 @@
-# rubocop:disable Metrics/PerceivedComplexity
 class BooksController < ApplicationController
   before_action :set_book, only: %i[show edit update destroy]
   before_action :check_auth
@@ -32,7 +31,7 @@ class BooksController < ApplicationController
       if @book.save
         format.html { redirect_to books_path, notice: 'Book was successfully created.' }
       else
-        format.html {  redirect_to new_book_path, alert: @book.errors.full_messages.first }
+        format.html { redirect_to new_book_path, alert: @book.errors.full_messages.first }
       end
     end
   end
@@ -51,5 +50,3 @@ class BooksController < ApplicationController
     params.require(:book).permit(:library_id)
   end
 end
-
-# rubocop:enable Metrics/PerceivedComplexity
