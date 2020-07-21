@@ -19,7 +19,7 @@ class BooksController < ApplicationController
     @book = Book.new
     @libraries = current_author.libraries
     @message = if @libraries.size.zero?
-                 'Before publishing a new book, you should create a category.'
+                 'If you want to choose a category for your book, you should create a category before publishing it.'
                else
                  'Choose a category for you book.'
                end
@@ -41,11 +41,7 @@ class BooksController < ApplicationController
       return
     end
 
-    if @library.nil?
-      flash[:alert] = 'You should choose a valid category that belongs to you to publish a new book.'
-      redirect_to new_book_path
-      return
-    else
+    unless @library.nil?
       @book.libraries << @library
     end
     respond_to do |format|

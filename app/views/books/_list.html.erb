@@ -4,7 +4,7 @@
   <% @books.each do |book| %>
     <div class="my-2 bg-white p-3 d-flex justify-content-start">
     <% library=current_author.libraries.select{|l| book.libraries.include?(l)}.first %>
-      <% if @image %>
+      <% if library %>
         <%= image_tag(library.image, class: "iconic mr-3") %>
       <% end %>
       <div>
