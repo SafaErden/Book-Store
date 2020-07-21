@@ -18,7 +18,6 @@ class AuthsController < ApplicationController
       respond_to do |format|
         alert_text = 'Sorry, we have no author with this input. Please sign up, if you don\'t have an account.'
         format.html { redirect_to new_auth_path, alert: alert_text }
-        format.json { head :no_content }
       end
     end
   end
@@ -27,7 +26,6 @@ class AuthsController < ApplicationController
     session[:author_id] = nil
     respond_to do |format|
       format.html { redirect_to new_auth_path, notice: 'Successfully logged out.' }
-      format.json { head :no_content }
     end
   end
 

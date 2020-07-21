@@ -26,11 +26,9 @@ class AuthorsController < ApplicationController
       if @author.save
         session[:author_id] = @author.id
         format.html { redirect_to new_auth_path, notice: 'Author account was successfully created.' }
-        format.json { render :show, status: :created, location: @author }
       else
         alert_text = 'Type a valid input paremeter, it should contain at least 2 characters and it should be unique.'
         format.html { redirect_to new_author_path, alert: alert_text }
-        format.json { render json: @author.errors, status: :unprocessable_entity }
       end
     end
   end

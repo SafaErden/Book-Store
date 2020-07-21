@@ -26,10 +26,8 @@ class LibrariesController < ApplicationController
     respond_to do |format|
       if @library.save
         format.html { redirect_to @library, notice: 'Category was successfully created.' }
-        format.json { render :show, status: :created, location: @library }
       else
         format.html { render :new }
-        format.json { render json: @library.errors, status: :unprocessable_entity }
       end
     end
   end
