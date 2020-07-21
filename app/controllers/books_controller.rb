@@ -6,12 +6,12 @@ class BooksController < ApplicationController
   before_action :check_auth
 
   def index
-    @books = current_author.books.order('created_at DESC')
+    @books = current_author.books.desc
     @image = true
   end
 
-  def store
-    @books = Book.all.order('created_at DESC').reject { |book| book.author == current_author }
+  def store 
+    @books = Book.all.desc.reject { |book| book.author == current_author }
     @image = false
   end
 

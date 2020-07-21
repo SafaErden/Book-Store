@@ -2,5 +2,7 @@ class Library < ApplicationRecord
   belongs_to :author
   has_many :book_libraries
   has_many :books, through: :book_libraries
-  has_one_attached :image
+  has_one_attached :image 
+
+  scope :asc, -> { order("name ASC") }
 end
