@@ -1,6 +1,4 @@
-# rubocop:disable Metrics/MethodLength
 # rubocop:disable Metrics/PerceivedComplexity
-# rubocop:disable Metrics/CyclomaticComplexity
 class BooksController < ApplicationController
   before_action :set_book, only: %i[show edit update destroy]
   before_action :check_auth
@@ -10,7 +8,7 @@ class BooksController < ApplicationController
     @image = true
   end
 
-  def store 
+  def store
     @books = Book.all.desc.reject { |book| book.author == current_author }
     @image = false
   end
@@ -29,26 +27,12 @@ class BooksController < ApplicationController
     @book = current_author.books.build(book_params)
     @library = Library.find_by(id: library_params[:library_id])
 
-    if book_params[:name].nil? || book_params[:name].size < 2
-      flash[:alert] = 'Please type a valid book name that contains at least 2 characters..'
-      redirect_to new_book_path
-      return
-    end
-
-    if book_params[:amount].nil? || book_params[:amount].to_i < 1
-      flash[:alert] = 'Please type a valid price value higher than 0.'
-      redirect_to new_book_path
-      return
-    end
-
-    unless @library.nil?
-      @book.libraries << @library
-    end
+    @book.libraries << @library unless @library.nil?
     respond_to do |format|
       if @book.save
         format.html { redirect_to books_path, notice: 'Book was successfully created.' }
       else
-        format.html { render :new }
+        format.html {  redirect_to new_book_path, alert: @book.errors.full_messages.first }
       end
     end
   end
@@ -67,6 +51,5 @@ class BooksController < ApplicationController
     params.require(:book).permit(:library_id)
   end
 end
-# rubocop:enable Metrics/MethodLength
+
 # rubocop:enable Metrics/PerceivedComplexity
-# rubocop:enable Metrics/CyclomaticComplexity

@@ -1,5 +1,5 @@
-<div class="shadow m-0 p-3 bg-white d-flex justify-content-between h4"><span class="text-secondary">Total:</span> <span class="font-weight-bold"> <%= @books.sum{|book| book.amount} %> &#36; </span></div>
-<div class="shadow m-0 p-3  bg-light-gray">
+<div class=" m-0 p-3 bg-white d-flex justify-content-between h4"><span class="text-secondary">Total:</span> <span class="font-weight-bold"> <%= @books.sum{|book| book.amount} %> &#36; </span></div>
+<div class=" m-0 p-3  bg-light-gray">
   <p id="notice m-0 p-0"><%= notice %></p>
   <% @books.each do |book| %>
     <div class="my-2 bg-white p-3 d-flex justify-content-start">
