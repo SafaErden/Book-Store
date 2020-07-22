@@ -27,7 +27,7 @@ class LibrariesController < ApplicationController
       if @library.save
         format.html { redirect_to @library, notice: 'Category was successfully created.' }
       else
-        format.html { render :new }
+        format.html { redirect_to new_library_path, alert: @library.errors.full_messages.first }
       end
     end
   end
