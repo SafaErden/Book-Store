@@ -3,12 +3,12 @@ class BooksController < ApplicationController
   before_action :check_auth
 
   def index
-    @books = current_author.books.desc
+    @books = current_author.books.desc.select{|book| book.libraries.exists?} 
     @image = true
   end
 
   def store
-    @books = Book.all.desc.includes(:author).where('author_id!=?', current_author.id)
+    @books = current_author.books.desc.reject{|book| book.libraries.exists?} 
     @image = false
   end
 
@@ -29,7 +29,7 @@ class BooksController < ApplicationController
     @book.libraries << @library unless @library.nil?
     respond_to do |format|
       if @book.save
-        format.html { redirect_to books_path, notice: 'Book was successfully created.' }
+        format.html { redirect_to current_author, notice: 'Book was successfully created.' }
       else
         format.html { redirect_to new_book_path, alert: @book.errors.full_messages.first }
       end
