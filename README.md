@@ -17,6 +17,11 @@
 
 [Description Video](https://www.loom.com/share/777e27b3acd54512b76e7c71c8165213)
 
+
+[Changes after the reviews](https://www.loom.com/share/ec9c8e1e6915437680e79a6a0d1ca749)
+
+
+
 ## Create an author account
 
 ![screenshot](./app/assets/images/img/signup.JPG)
