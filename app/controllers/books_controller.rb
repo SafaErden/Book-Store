@@ -3,12 +3,12 @@ class BooksController < ApplicationController
   before_action :check_auth
 
   def index
-    @books = current_author.books.desc.select{|book| book.libraries.exists?} 
+    @books = current_author.books.desc.select { |book| book.libraries.exists? }
     @image = true
   end
 
   def store
-    @books = current_author.books.desc.reject{|book| book.libraries.exists?} 
+    @books = current_author.books.desc.reject { |book| book.libraries.exists? }
     @image = false
   end
 

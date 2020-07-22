@@ -9,14 +9,14 @@ class Library < ApplicationRecord
 
   def logo_validation
     if image.attached?
-      if image.blob.byte_size > 1000000
+      if image.blob.byte_size > 1_000_000
         image.purge
         errors[:base] << 'Too big'
       elsif !image.blob.content_type.starts_with?('image/')
         image.purge
         errors[:base] << 'Wrong format'
       end
-    elsif  !image.attached?
+    elsif !image.attached?
       errors.add(:image, 'should be added')
     end
   end
