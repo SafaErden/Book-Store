@@ -1,0 +1,16 @@
+<% @title="New Category" %>
+<%= render 'layouts/navbar' %>
+<div class="sign_form bg-custom-light rounded  p-2 py-5">
+  
+  <%= form_with(model: @library, local: true) do |form| %>
+    <div class="actions">
+      <%= form.text_field :name, placeholder: "Category Name", class: "w-100 p-2" %><br>
+      <%= form.file_field :image, placeholder: "Category Icon", class: "w-100 p-2 border mt-3" %><br>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <div class="w-100 p-2 bg-success-custom my-5">
+        <%= submit_tag("CREATE", :class=>"w-100 bg-success-custom text-white border-custom p-2") %><br>
+      </div>
+    </div>
+  <% end %>
+</div>

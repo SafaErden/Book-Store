@@ -1,0 +1,20 @@
+<div class=" m-0 p-3 bg-white d-flex justify-content-between h4"><span class="text-secondary">Total:</span> <span class="font-weight-bold"> <%= @books.sum{|book| book.amount} %> &#36; </span></div>
+<div class=" m-0 p-3  bg-light-gray">
+  <p id="notice m-0 p-0"><%= notice %></p>
+  <% @books.each do |book| %>
+    <div class="my-2 bg-white p-3 d-flex justify-content-start">
+    <% library=current_author.libraries.select{|l| book.libraries.include?(l)}.first %>
+    <%= icon(library) %>
+      <div>
+        <p class="text-secondary h6 m-0 p-0 pt-2"><strong>Book Name: </strong><%= book.name %></p>
+        <% unless @book_author.nil? %>
+          <p class="text-secondary h6 m-0 p-0 pt-2 h6"><strong>Author: </strong><%= book.author.name %></p>
+        <% end %>
+        <p class="text-secondary h6 m-0 p-0 pt-3"><strong>Published: </strong> <%= book.created_at.day %>-<%= book.created_at.month %>-<%= book.created_at.year %></p>
+      </div>
+      <div class="ml-auto">
+        <p class="text-secondary h6 m-0 p-0 pt-2 font-weight-bold"><%= book.amount %> &#36; </p>
+      </div>
+    </div>
+  <% end %>
+</div>
