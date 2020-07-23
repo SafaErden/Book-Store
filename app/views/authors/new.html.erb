@@ -1,0 +1,18 @@
+<div class="sign_form bg-custom-light rounded  p-2 py-5">
+  <div class="shadow d-flex align-items-center justify-content-center custom-circle bg-custom text-white font-weight-bold text-center mb-5 p-5">
+      <span class="h2">Create an Account</span>
+  </div>
+  <%= form_with(model: @author, local: true) do |form| %>
+    <div class="actions">
+      <%= form.text_field :name, placeholder: "Author name", class: "w-100 p-2" %><br>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <div class="w-100 p-2 bg-success-custom my-5">
+        <%= submit_tag("SIGN UP", :class=>"w-100 bg-success-custom text-white border-custom p-2") %><br>
+      </div>
+    </div>
+  <% end %>
+  <span>If you have an accout, then
+    <%= link_to 'Sign in', new_auth_path %>
+  <span>
+</div>
